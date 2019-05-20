@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMPROVED CAR AI</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1 id="title">CAR NEUROEVOLUTION <span id="mention">by pooky1955</span></h1>
+    <div id="sliderscontainer">
+        <label for="speed">Speed : <span id="speedlabel"></span></label>
+        <input class="slider" type="range" name="speed" id="speed" min="0" max="6" value="0" step="1">
+        <label for="variance">Variance : <span id="variancelabel"></span></label>
+        <input class="slider" type="range" name="variance" id="variance" min="0" max="1" value="0.1" step="0.05">
+        <label for="mutationrate">Mutation Rate : <span id="mutationratelabel"></span></label>
+        <input class="slider" type="range" name="mutationrate" id="mutationrate" min="0" max="1" value="0.3"
+            step="0.05">
+
+    </div>
+    <div id="info">
+        Press X or the button to clear the stage and go in edit mode <br>
+        Press Q or the button to auto complete the track and swap between edit and game mode <br>
+        Adjust sliders to your will! <br>
+        Enjoy! <br>
+        <button id="gamebutton">Complete track</button> <br>
+        <button id="resetbutton">Reset track</button> <br>
+        <label for="streetwidth"> Street width: <span id="streetwidthlabel"></span></label>
+        <input class="slider" type="range" name="streetwidth" id="streetwidth" min="10" max="100" value="50" step="5">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+    <script src="Matrix.js"></script>
+    <script src="NeuralNet.js"></script>
+    <script src="helperfunctions.js"></script>
+    <script src="editor.js"></script>
+    <script src="car.js"></script>
+    <script src="ga.js"></script>
+    <script src="wall.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

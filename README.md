@@ -1,5 +1,6 @@
-Neuroevolution of Car AI
-===
+#Neuroevolution of Car AI
+
+
 Click points on the canvas
 
 Press Q or the button to get the AI going!

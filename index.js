@@ -15,7 +15,7 @@ function setup() {
     streetWidthSlider = document.querySelector('#streetwidth')
     streetWidthLabel = document.querySelector('#streetwidthlabel')
     editor = new Editor()
-    document.querySelector('#resetbutton').onclic = function () {
+    document.querySelector('#resetbutton').onclick = function () {
         editor.editing = true
         editor.clear()
     }

@@ -125,11 +125,8 @@ function keyPressed(e) {
     }
     if (e.key == 'x') {
         editor.editing = true
+        button.innerHTML = 'Complete track'
         editor.clear()
-    } else if (e.key == '+') {
-        cycles *= 2
-    } else if (e.key == '-') {
-        cycles /= 2
     }
 
 }

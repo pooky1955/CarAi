@@ -137,10 +137,13 @@ class Editor {
         if (this.points.length > 1) {
             beginShape()
             for (let point of this.points) {
-                ellipse(point.x, point.y, 10 * sclF)
                 vertex(point.x, point.y)
             }
             endShape()
+        }
+        fill(255, 255, 0)
+        for (let point of this.points) {
+            ellipse(point.x, point.y, 10 * sclF)
         }
     }
 

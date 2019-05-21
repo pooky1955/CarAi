@@ -1,7 +1,7 @@
 
 let car, savedNECars = [], editor, NECars = [], walls = [], fitnessGates = [], start, population = 500, startAngle = 0, varianceSlider, variancelabel
 let maxForce = 1, frictionCoefficient = 0.125, numSights = 8, cycles = 1, elitism = 0.01, sclF, button, speedSlider, mutationSlider
-let streetWidthSlider, streetWidthLabel, streetWidthValue = 50
+let streetWidthSlider, streetWidthLabel, streetWidthValue = 50, gen = 0
 function setup() {
     createCanvas(window.innerWidth / 2, window.innerWidth / 2)
     button = document.querySelector('#button')
@@ -28,6 +28,7 @@ function setup() {
             } else {
                 alert('Add more points')
                 editor.editing = true
+                editor.clear()
             }
         }
     }
@@ -87,6 +88,8 @@ function draw() {
     strokeWeight(0)
     textSize(50 * sclF)
     text(message, width * 0.6, height * 0.1)
+    let message2 = `Gen : ${gen} , Best Laps : ${bestLaps}`
+    text(message2, width * 0.3, height * 0.9)
     pop()
 }
 function mouseClicked() {

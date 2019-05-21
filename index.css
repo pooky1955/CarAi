@@ -11,26 +11,9 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
     margin-bottom: 10px;
-    font-size: 1.7em;
+    font-size: 2.5em;
 }
 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-
-    appearance: none;
-    width: 125px;
-    /* Set a specific slider handle width */
-    height: 15px;
-    /* Slider handle height */
-    background: #4CAF50;
-    /* Green background */
-    cursor: pointer;
-    /* Cursor on hover */
-}
-
-#mention {
-    color: darkgray;
-}
 
 button {
     background: rgb(124, 124, 124);

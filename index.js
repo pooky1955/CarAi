@@ -92,7 +92,8 @@ function draw() {
     text(message2, width * 0.3, height * 0.9)
     pop()
 }
-function mouseClicked() {
+function mousePressed() {
+
     start = editor.points[0] || createVector(width / 2, height / 2)
     if (editor.editing) {
         if (within(mouseX, 0, width) && within(mouseY, 0, height)) {
@@ -102,6 +103,7 @@ function mouseClicked() {
         }
 
     }
+
 }
 function switchtoGame() {
     editor.autocomplete(50 * sclF)

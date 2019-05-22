@@ -51,38 +51,51 @@ class Car {
             for (let i = 0; i < this.walls.length; i++) {
 
                 let result = findIntersect(dir, this.walls[i])
-                if (result.onWall && result.sign > 0) {
+                if (result.onWall) {
                     results.push(result)
                 }
             }
 
             // let chosenIndex = 0
-            for (let i = 0; i < results.length; i++) {
-                if (results[i].distance < min) {
-                    min = results[i].distance
-                    // chosenIndex = i
+            let debugging = false
+            if (this.special && debugging) {
+
+                let chosenIndex = 0
+                for (let i = 0; i < results.length; i++) {
+                    if (results[i].distance < min) {
+                        min = results[i].distance
+                        chosenIndex = i
+                    }
+                }
+                if (results[chosenIndex]) {
+                    stroke(255)
+                    strokeWeight(1)
+                    let pos = results[chosenIndex].collidingPoint
+                    line(this.position.x, this.position.y, pos.x, pos.y)
+                    let distance = getDistance(this.position.x, this.position.y, pos.x, pos.y)
+                    distance = Math.round(distance)
+                    let avg = p5.Vector.add(pos, this.position)
+                    avg.mult(0.5)
+                    fill(255)
+                    push()
+                    translate(avg.x, avg.y)
+                    strokeWeight(0)
+                    textSize(15)
+                    rotate(this.angle + a)
+                    text(distance, 0, 20)
+                    pop()
+                    fill(0, 255, 0)
+                    ellipse(results[chosenIndex].collidingPoint.x, results[chosenIndex].collidingPoint.y, 5, 5)
+                }
+            } else {
+                for (let i = 0; i < results.length; i++) {
+                    if (results[i].distance < min) {
+                        min = results[i].distance
+                        // chosenIndex = i
+                    }
                 }
             }
-            // if (results[chosenIndex]) {
-            //     stroke(255)
-            //     strokeWeight(1)
-            //     let pos = results[chosenIndex].collidingPoint
-            //     line(this.position.x, this.position.y, pos.x, pos.y)
-            //     let distance = getDistance(this.position.x, this.position.y, pos.x, pos.y)
-            //     distance = Math.round(distance)
-            //     let avg = p5.Vector.add(pos, this.position)
-            //     avg.mult(0.5)
-            //     fill(255)
-            //     push()
-            //     translate(avg.x, avg.y)
-            //     strokeWeight(0)
-            //     textSize(15)
-            //     rotate(this.angle + a)
-            //     text(distance, 0, 20)
-            //     pop()
-            //     fill(0, 255, 0)
-            //     ellipse(results[chosenIndex].collidingPoint.x, results[chosenIndex].collidingPoint.y, 5, 5)
-            // }
+
         }
         return min
     }
@@ -95,7 +108,7 @@ class Car {
 
 
         for (let i = 0; i < numSights; i++) {
-            let angle = -PI / 2 + PI * i / (numSights - 1)
+            let angle = -PI / 2 + PI * i / (numSights)
             let input = this.see(angle)
             this.inputs.push(1 / input)
         }

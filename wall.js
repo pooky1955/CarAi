@@ -21,10 +21,11 @@ class Wall {
         return new Wall(start, end)
     }
     display() {
-
+        stroke(255, 255, 0)
         strokeWeight(3 * sclF)
         line(this.start.x, this.start.y, this.end.x, this.end.y)
         this.touched = false
+        stroke(0)
     }
 
 }

@@ -55,9 +55,7 @@ function draw() {
     if (!editor.editing) {
         editor.displayTrack()
         stroke(0)
-        for (let gate of fitnessGates) {
-            gate.display()
-        }
+
         for (let j = 0; j < cycles; j++) {
             for (let i = 0; i < NECars.length; i++) {
                 let car = NECars[i]
@@ -77,11 +75,15 @@ function draw() {
         for (let car of NECars) {
             car.display()
         }
+        for (let wall of walls) {
+            wall.display()
+        }
     } else {
         stroke(255, 0, 0)
         strokeWeight(5)
         editor.displayPerp()
         editor.generatePerpPoints(streetWidthValue * sclF)
+        stroke(0)
     }
     let message = editor.editing ? 'Editing Mode' : 'Game Mode'
     fill(255)
